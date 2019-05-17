@@ -10,7 +10,9 @@ import * as Pages from 'pages';
 const Routes = () => (
   <Router history={history}>
     <Switch>
-      <Route path="/" component={Pages.Auth.Login} exact />
+      <Route path="/login" component={Pages.Auth.Login} exact />
+
+      <Route path="/" component={Pages.Dashboard} exact />
     </Switch>
   </Router>
 );
