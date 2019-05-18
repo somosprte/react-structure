@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 import { api } from 'services';
 
+import { Loading } from 'components';
 import { Container, Title, Button, Form } from './styles';
 
 const schema = Yup.object().shape({
@@ -15,13 +17,15 @@ function Login() {
   const [submiting, setSubmiting] = useState(false);
 
   async function handleSubmit(data) {
-    setSubmiting(true);
-    const response = await api.post('auth/v2/users/login', data);
-    setSubmiting(false);
+    try {
+      setSubmiting(true);
+      const response = await api.post('auth/v2/users/login', data);
+      setSubmiting(false);
+    } catch (error) {
+      const { message } = error.response.data.error;
 
-    console.log(response.data);
-
-    // console.log(response.data);
+      swal('Ops, algo deu errado', message, 'error');
+    }
   }
 
   return (
@@ -38,7 +42,7 @@ function Login() {
         </Form.Field>
 
         <Button type="submit" disabled={submiting}>
-          {submiting ? 'Logando' : 'Login'}
+          {submiting ? <Loading type="button" /> : 'Login'}
         </Button>
       </Form>
     </Container>
