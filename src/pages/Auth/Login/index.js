@@ -13,14 +13,19 @@ const schema = Yup.object().shape({
   password: Yup.string().required('Campo obrigatório'),
 });
 
-function Login() {
+function Login(props) {
   const [submiting, setSubmiting] = useState(false);
 
   async function handleSubmit(data) {
     try {
+      const { history } = props;
+
       setSubmiting(true);
       const response = await api.post('auth/v2/users/login', data);
+      await localStorage.setItem('auth_token', response.data.jwt);
       setSubmiting(false);
+
+      history.push('/');
     } catch (error) {
       const { message } = error.response.data.error;
 

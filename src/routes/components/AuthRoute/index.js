@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { withLayout } from 'hocs';
 
-class AuthRoute extends Component {
-  render() {
-    const { component: RenderComponent } = this.props;
+const AuthRoute = props => {
+  const { component: RenderComponent } = props;
 
-    return <Route render={props => <RenderComponent {...props} />} />;
-  }
-}
+  return <Route render={props => <RenderComponent {...props} />} />;
+};
 
 export default withLayout('Auth')(AuthRoute);

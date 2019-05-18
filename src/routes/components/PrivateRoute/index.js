@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { withLayout } from 'hocs';
 
-class PrivateRoute extends Component {
-  render() {
-    const { component: RenderComponent } = this.props;
+function PrivateRoute(props) {
+  const { component: RenderComponent } = props;
 
-    return <Route render={props => <RenderComponent {...props} />} />;
-  }
+  useEffect(() => {
+    console.log(localStorage.getItem('auth_token'));
+  }, []);
+
+  return <Route render={props => <RenderComponent {...props} />} />;
 }
 
 export default withLayout()(PrivateRoute);
