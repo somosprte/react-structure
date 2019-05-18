@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import * as Yup from 'yup';
-import swal from 'sweetalert';
-import { api } from 'services';
+
+import { Creators as AuthActions } from 'store/ducks/auth';
 
 import { Loading } from 'components';
 import { Container, Title, Button, Form } from './styles';
@@ -13,24 +14,12 @@ const schema = Yup.object().shape({
   password: Yup.string().required('Campo obrigatório'),
 });
 
-function Login(props) {
-  const [submiting, setSubmiting] = useState(false);
+function Login() {
+  const dispatch = useDispatch();
+  const login = useSelector(state => state.auth.login);
 
   async function handleSubmit(data) {
-    try {
-      const { history } = props;
-
-      setSubmiting(true);
-      const response = await api.post('auth/v2/users/login', data);
-      await localStorage.setItem('auth_token', response.data.jwt);
-      setSubmiting(false);
-
-      history.push('/');
-    } catch (error) {
-      const { message } = error.response.data.error;
-
-      swal('Ops, algo deu errado', message, 'error');
-    }
+    dispatch(AuthActions.loginRequest(data));
   }
 
   return (
@@ -46,8 +35,8 @@ function Login(props) {
           <Form.Input name="password" type="password" placeholder="Sua senha" />
         </Form.Field>
 
-        <Button type="submit" disabled={submiting}>
-          {submiting ? <Loading type="button" /> : 'Login'}
+        <Button type="submit" disabled={login.loading}>
+          {login.loading ? <Loading type="button" /> : 'Login'}
         </Button>
       </Form>
     </Container>
