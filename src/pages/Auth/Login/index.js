@@ -5,7 +5,7 @@ const Login = () => (
   <div>
     <h1>Login</h1>
 
-    <Link to="/">Home</Link>
+    <Link to="/">LOGAR</Link>
   </div>
 );
 
