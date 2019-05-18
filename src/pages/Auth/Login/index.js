@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-// import { Form } from 'components';
+import { Form } from 'components';
+// import { Form, Input } from '@rocketseat/unform';
 
 import { Container, Title } from './styles';
 
@@ -9,9 +9,15 @@ const Login = () => (
   <Container>
     <Title>Login</Title>
 
-    {/* <Form>
-      <Form.Input placeholder="" />
-    </Form> */}
+    <Form>
+      <Form.Field>
+        <Form.Input name="username" placeholder="Seu e-mail" />
+      </Form.Field>
+
+      <Form.Field>
+        <Form.Input name="password" placeholder="Sua senha" />
+      </Form.Field>
+    </Form>
   </Container>
 );
 

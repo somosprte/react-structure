@@ -5,6 +5,9 @@ export default {
   black: '#2D2D2D',
   white: '#FFFFFF',
 
+  border: '#E2E2E2',
+  borderFocused: '#DFDFDF',
+
   darkGray: '#737373',
   gray: '#C4C4C4',
   lightGray: '#EEEEEE',
