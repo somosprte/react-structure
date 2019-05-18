@@ -25,7 +25,16 @@ function* loginRequest(action) {
   }
 }
 
-function* logoutRequest() {}
+function* logoutRequest() {
+  try {
+    localStorage.clear();
+    yield put(push('/login'));
+
+    yield put(AuthActions.logoutSuccess());
+  } catch (error) {
+    yield put(AuthActions.logoutFailure());
+  }
+}
 
 export default function* saga() {
   yield takeLatest(AuthTypes.LOGIN_REQUEST, loginRequest);

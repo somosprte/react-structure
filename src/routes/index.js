@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Router, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Switch } from 'react-router-dom';
 import history from './history';
 
 import * as Pages from 'pages';
@@ -8,14 +8,14 @@ import * as Pages from 'pages';
 import { AuthRoute, PrivateRoute } from './components';
 
 const Routes = () => (
-  <Router history={history}>
+  <ConnectedRouter history={history}>
     <Switch>
       <AuthRoute path="/login" component={Pages.Auth.Login} exact />
 
       <PrivateRoute path="/" component={Pages.Dashboard} exact />
       <PrivateRoute path="/users" component={Pages.Users} exact />
     </Switch>
-  </Router>
+  </ConnectedRouter>
 );
 
 export default Routes;
