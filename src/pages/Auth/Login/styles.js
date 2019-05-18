@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { colors } from 'assets/styles';
 
+import { Form as ComponentForm, Button as ComponentButton } from 'components';
+
 export const Container = styled.div`
   background: ${colors.white};
   border: 1px solid ${colors.lighGray};
@@ -11,4 +13,12 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   color: ${colors.pink};
+`;
+
+export const Form = styled(ComponentForm)`
+  background: #000;
+`;
+
+export const Button = styled(ComponentButton)`
+  width: 150px;
 `;

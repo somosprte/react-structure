@@ -10,6 +10,7 @@ export const StyledInput = styled(Input)`
   font-size: 13px;
   line-height: 23px;
   padding: 0 20px;
+  width: 100%;
 
   &:focus {
     border-color: ${colors.borderFocused};
