@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import colors from './colors';
+
 export const Styles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
 
@@ -25,6 +27,6 @@ export const Styles = createGlobalStyle`
   }
 
   a {
-    color: #FFF;
+    color: ${colors.primary};
   }
 `;

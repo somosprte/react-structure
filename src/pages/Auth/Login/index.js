@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import * as Yup from 'yup';
 
+import { useSelector, useDispatch } from 'react-redux';
 import { Creators as AuthActions } from 'store/ducks/auth';
 
 import { Loading } from 'components';

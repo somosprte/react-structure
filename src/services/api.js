@@ -13,7 +13,11 @@ const api = axios.create({
 api.interceptors.request.use(
   async config => {
     // TODO: Before complete request check if localStorage have the auth_token, if is on storage add headers Authorization
-    // const token = await localStorage.getItem('auth_token');
+    const token = await localStorage.getItem('auth_token');
+
+    if (token !== null) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
     return config;
   },
