@@ -3,7 +3,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { Switch } from 'react-router-dom';
 import history from './history';
 
-import * as Pages from 'pages';
+import * as Pages from '~/pages';
 
 import { AuthRoute, PrivateRoute } from './components';
 

@@ -1,9 +1,9 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { api } from 'services';
+import { api } from '~/services';
 import swal from 'sweetalert';
 
-import { Creators as AuthActions, Types as AuthTypes } from 'store/ducks/auth';
+import { Creators as AuthActions, Types as AuthTypes } from '~/store/ducks/auth';
 
 function* loginRequest(action) {
   try {

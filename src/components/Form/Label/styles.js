@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'assets/styles';
+import { colors } from '~/assets/styles';
 
 export const StyledLabel = styled.span`
   color: ${colors.black};

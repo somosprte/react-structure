@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { withLayout } from 'hocs';
+import { withLayout } from '~/hocs';
 
 function PrivateRoute(props) {
   const { component: RenderComponent } = props;

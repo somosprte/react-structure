@@ -1,10 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { hot } from 'react-hot-loader/root';
 
-import 'config/Reactotron';
+import '~/config/Reactotron';
 
-import store from 'store';
-import Router from 'routes';
+import store from '~/store';
+import Router from '~/routes';
 
 function App() {
   return (
@@ -14,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(App);

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { Creators as AuthActions } from 'store/ducks/auth';
-import { Creators as UsersActions } from 'store/ducks/users';
+import { Creators as AuthActions } from '~/store/ducks/auth';
+import { Creators as UsersActions } from '~/store/ducks/users';
 
-import { Button } from 'components';
+import { Button } from '~/components';
 
-import { global as Global } from 'assets/styles';
+import { global as Global } from '~/assets/styles';
 
 export default Page =>
   function Auth(props) {

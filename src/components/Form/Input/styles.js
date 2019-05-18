@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'assets/styles';
+import { colors } from '~/assets/styles';
 import { Input } from '@rocketseat/unform';
 
 export const StyledInput = styled(Input)`

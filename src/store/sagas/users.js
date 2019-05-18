@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { api } from 'services';
+import { api } from '~/services';
 
-import { Creators as UsersActions, Types as UsersTypes } from 'store/ducks/users';
+import { Creators as UsersActions, Types as UsersTypes } from '~/store/ducks/users';
 
 function* getUserLoggedRequest() {
   try {

@@ -2,9 +2,9 @@ import React from 'react';
 import * as Yup from 'yup';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { Creators as AuthActions } from 'store/ducks/auth';
+import { Creators as AuthActions } from '~/store/ducks/auth';
 
-import { Loading } from 'components';
+import { Loading } from '~/components';
 import { Container, Title, Button, Form } from './styles';
 
 const schema = Yup.object().shape({
