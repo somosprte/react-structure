@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Login = () => (
-  <div>
-    <h1>Login</h1>
+// import { Form } from 'components';
 
-    <Link to="/">LOGAR</Link>
-  </div>
+import { Container, Title } from './styles';
+
+const Login = () => (
+  <Container>
+    <Title>Login</Title>
+
+    {/* <Form>
+      <Form.Input placeholder="" />
+    </Form> */}
+  </Container>
 );
 
 export default Login;
