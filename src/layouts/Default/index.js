@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Creators as AuthActions } from '~/store/ducks/auth';
 import { Creators as UsersActions } from '~/store/ducks/users';
 
-import { Button } from '~/components';
+import { Button, Loading } from '~/components';
 
 import { global as Global } from '~/assets/styles';
 
@@ -16,7 +16,7 @@ export default Page =>
 
     useEffect(() => {
       dispatch(UsersActions.getUserLoggedRequest());
-    }, [dispatch]);
+    }, []);
 
     function handleLogout() {
       dispatch(AuthActions.logoutRequest());
@@ -26,7 +26,10 @@ export default Page =>
       <>
         <Global.Styles />
         {user.loading ? (
-          <div>Carregando</div>
+          <div>
+            <Loading />
+            Carregando
+          </div>
         ) : (
           <div>
             <h1>PRIVATE ROUTE</h1>
