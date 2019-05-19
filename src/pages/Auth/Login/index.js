@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Yup from 'yup';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { Creators as AuthActions } from '~/store/ducks/auth';
 
 import { Loading } from '~/components';
-import { Container, Title, Button, Form } from './styles';
+import { Container, Title, Button, Form, Buttons } from './styles';
 
 const schema = Yup.object().shape({
   username: Yup.string()
@@ -24,20 +24,25 @@ function Login() {
 
   return (
     <Container>
-      <Title>Login</Title>
+      <Title>
+        Login
+        <span>Insira os dados da sua conta Zôdio:</span>
+      </Title>
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Form.Field>
-          <Form.Input name="username" placeholder="Seu e-mail" />
+          <Form.Input name="username" placeholder="Seu e-mail" autoComplete="off" />
         </Form.Field>
 
         <Form.Field>
           <Form.Input name="password" type="password" placeholder="Sua senha" />
         </Form.Field>
 
-        <Button type="submit" disabled={login.loading}>
-          {login.loading ? <Loading type="button" /> : 'Login'}
-        </Button>
+        <Buttons>
+          <Button type="submit" disabled={login.loading}>
+            {login.loading ? <Loading type="button" /> : 'Login'}
+          </Button>
+        </Buttons>
       </Form>
     </Container>
   );
