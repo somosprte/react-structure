@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { URLParser } from '~/common';
 
 import { Nav, Item, Link } from './styles';
 
-const Menu = () => {
+function Menu(props) {
+  const { location } = props;
+  const [active, setActive] = useState(URLParser(props.location));
+
+  useEffect(() => {
+    setActive(URLParser(location));
+  }, [location]);
+
   return (
     <Nav>
-      <Item>
+      <Item active={active === ''}>
         <Link to="/">Início</Link>
       </Item>
 
-      <Item active>
-        <Link to="/">Exemplo</Link>
+      <Item active={active === 'users'}>
+        <Link to="/users">Usuários</Link>
       </Item>
 
       <Item>
@@ -22,6 +31,6 @@ const Menu = () => {
       </Item>
     </Nav>
   );
-};
+}
 
 export default Menu;

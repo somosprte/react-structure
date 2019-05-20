@@ -32,7 +32,7 @@ export default Page =>
         ) : (
           <Container>
             <div>
-              <Header />
+              <Header {...props} />
 
               <Page {...props} />
             </div>

@@ -6,7 +6,7 @@ import { Container, Logo, Navigation } from './styles';
 
 import LogoImage from '~/assets/images/logo.svg';
 
-const Header = () => {
+const Header = props => {
   return (
     <Container>
       <div>
@@ -14,7 +14,7 @@ const Header = () => {
 
         <Navigation>
           <Search />
-          <Menu />
+          <Menu {...props} />
         </Navigation>
 
         <div>Options</div>
