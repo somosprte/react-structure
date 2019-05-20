@@ -3,7 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 import colors from './colors';
 
 export const Styles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+
+  html, body, #root {
+    height: 100%;
+  }
 
   * {
     box-sizing: border-box;

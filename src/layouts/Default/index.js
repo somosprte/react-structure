@@ -6,8 +6,10 @@ import { Creators as AuthActions } from '~/store/ducks/auth';
 import { Creators as UsersActions } from '~/store/ducks/users';
 
 import { Button } from '~/components';
+import { Header } from './components';
 
 import { global as Global } from '~/assets/styles';
+import { Container } from './styles';
 
 export default Page =>
   function Auth(props) {
@@ -28,25 +30,13 @@ export default Page =>
         {user.loading ? (
           <div>Carregando</div>
         ) : (
-          <div>
-            <h1>PRIVATE ROUTE</h1>
+          <Container>
+            <div>
+              <Header {...props} />
 
-            <ul>
-              <li>
-                <Link to="/">Dashboard</Link>
-              </li>
-
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
-
-              <Button color="error" onClick={handleLogout}>
-                Logout
-              </Button>
-            </ul>
-
-            <Page {...props} />
-          </div>
+              <Page {...props} />
+            </div>
+          </Container>
         )}
       </>
     );
