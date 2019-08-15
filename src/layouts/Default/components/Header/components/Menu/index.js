@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { URLParser } from '~/common';
 
-import { Nav, Item, Link } from './styles';
+import { Nav, Title, Item, Link } from './styles';
 
 function Menu(props) {
   const { location } = props;
@@ -14,21 +14,49 @@ function Menu(props) {
 
   return (
     <Nav>
-      <Item active={active === ''}>
-        <Link to="/">Início</Link>
-      </Item>
+      <Title active={active === ''}>
+        <Link to="/">Dashboard</Link>
+      </Title>
 
-      <Item active={active === 'users'}>
-        <Link to="/users">Usuários</Link>
-      </Item>
+      <Title>
+        <span>Ecommerce</span>
 
-      <Item>
-        <Link to="/">Produtos</Link>
-      </Item>
+        <ul>
+          <Item>
+            <Link /* active={active === ''} */ to="/">Categorias</Link>
+          </Item>
 
-      <Item>
-        <Link to="/">Configurações</Link>
-      </Item>
+          <Item>
+            <Link /* active={active === ''} */ to="/">Campanhas</Link>
+          </Item>
+
+          <Item>
+            <Link /* active={active === ''} */ to="/">Produtos</Link>
+          </Item>
+
+          <Item>
+            <Link /* active={active === ''} */ to="/">Pedidos</Link>
+          </Item>
+        </ul>
+      </Title>
+
+      <Title>
+        <span>Conteúdo</span>
+
+        <ul>
+          <Item>
+            <Link /* active={active === ''} */ to="/">Banners</Link>
+          </Item>
+
+          <Item>
+            <Link /* active={active === ''} */ to="/">Templates de e-mail</Link>
+          </Item>
+        </ul>
+      </Title>
+
+      <Title /* active={active === ''} */>
+        <Link to="/">Eventos</Link>
+      </Title>
     </Nav>
   );
 }

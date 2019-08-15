@@ -26,14 +26,10 @@ export const Title = styled.h2`
 `;
 
 export const Form = styled(ComponentForm)`
-  background: #000;
-`;
-
-export const Buttons = styled(ComponentForm.Buttons)`
-  justify-content: flex-end;
+  background: ${colors.white};
 `;
 
 export const Button = styled(ComponentButton)`
-  align-self: flex-end;
-  width: 150px;
+  margin-bottom: 16px;
+  width: 100%;
 `;

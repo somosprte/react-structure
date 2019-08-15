@@ -1,4 +1,5 @@
 import * as global from './global';
 import colors from './colors';
+import device from './device';
 
-export { global, colors };
+export { global, colors, device };

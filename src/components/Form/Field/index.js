@@ -1,11 +1,15 @@
-import React from 'react';
+import styled from 'styled-components';
+import { colors } from '~/assets/styles';
 
-import { StyledField } from './styles';
-
-function Field(props) {
-  const { children } = props;
-
-  return <StyledField>{children}</StyledField>;
-}
-
-export default Field;
+export default styled.div`
+  align-items: flex-start;
+  color: ${colors.black};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+  margin-bottom: 16px;
+  width: 100%;
+`;

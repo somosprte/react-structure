@@ -4,14 +4,14 @@ import { Form } from '~/components';
 
 import { Container } from './styles';
 
-const Search = () => {
+function Search(props) {
   return (
     <Container>
-      <Form>
+      <Form onSubmit={() => {}}>
         <Form.Input name="search" placeholder="Buscar em produtos" />
       </Form>
     </Container>
   );
-};
+}
 
 export default Search;

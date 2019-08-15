@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader/root';
 
 import '~/config/Reactotron';
+import '~/config/yup';
+import '~/assets/css/sweatalert.css';
 
 import store from '~/store';
 import Router from '~/routes';
