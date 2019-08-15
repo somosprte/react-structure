@@ -53,6 +53,17 @@ export default styled.button.attrs({ type: 'button' })`
     `}
 
     ${props =>
+      props.icon &&
+      css`
+        background: ${colors.lightGray};
+        color: ${colors.darkGray};
+        height: 23px;
+        padding: 0;
+        width: 23px;
+      `}
+
+
+    ${props =>
       props.facebook &&
       css`
         background: ${colors.white};
