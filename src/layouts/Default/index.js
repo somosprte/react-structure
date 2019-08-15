@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { Creators as AuthActions } from '~/store/ducks/auth';
 import { Creators as UsersActions } from '~/store/ducks/users';
 
-import { Button } from '~/components';
-import { Header } from './components';
+import { Header, AppHeader, Loading } from './components';
 
 import { global as Global } from '~/assets/styles';
 import { Container } from './styles';
@@ -15,26 +13,40 @@ export default Page =>
   function Auth(props) {
     const dispatch = useDispatch();
     const user = useSelector(state => state.users.logged);
+    const logout = useSelector(state => state.auth.logout);
+    const [loading, setLoading] = useState(true);
+    const [loaded, setLoaded] = useState(false);
+    const [done, setDone] = useState(false);
 
     useEffect(() => {
-      dispatch(UsersActions.getUserLoggedRequest());
-    }, [dispatch]);
+      setTimeout(() => dispatch(UsersActions.getUserLoggedRequest()), 1000);
+    }, []);
 
-    function handleLogout() {
-      dispatch(AuthActions.logoutRequest());
-    }
+    useEffect(() => {
+      if (!user.loading) {
+        setLoaded(!user.loading);
+        setTimeout(() => setLoading(false), 400);
+      }
+    }, [user.loading]);
+
+    useEffect(() => {
+      if (!loading) {
+        setTimeout(() => setDone(true), 300);
+      }
+    }, [loading]);
 
     return (
       <>
         <Global.Styles />
-        {user.loading ? (
-          <div>Carregando</div>
+        {loading ? (
+          <Loading loaded={loaded} />
         ) : (
-          <Container>
+          <Container logouting={logout.loading}>
             <div>
               <Header {...props} />
+              <AppHeader {...props} />
 
-              <Page {...props} />
+              {done && <Page {...props} />}
             </div>
           </Container>
         )}

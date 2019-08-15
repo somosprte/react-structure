@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { StyledInput } from './styles';
+import { Container, StyledInput, Checkbox } from './styles';
 
-const Input = props => {
-  return <StyledInput {...props} />;
-};
+function Input(props) {
+  return (
+    <Container>
+      <StyledInput {...props} />
+      {props.type === 'checkbox' && <Checkbox />}
+    </Container>
+  );
+}
 
 export default Input;

@@ -1,7 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { colors } from '~/assets/styles';
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1
+  }
+`;
+
 export const Container = styled.div`
+  animation: ${fadeIn} 1.5s linear;
   align-items: center;
   background: ${colors.white};
   min-height: 100%;

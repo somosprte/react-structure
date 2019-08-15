@@ -1,11 +1,11 @@
-import React from 'react';
+import styled from 'styled-components';
+import { colors } from '~/assets/styles';
 
-import { StyledLabel } from './styles';
-
-function Label(props) {
-  const { children } = props;
-
-  return <StyledLabel>{children}</StyledLabel>;
-}
-
-export default Label;
+export default styled.label`
+  color: ${colors.black};
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 21px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+`;
