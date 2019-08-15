@@ -1,5 +1,5 @@
 import Form from './Form';
-import Breadcrumbs from './BreadCrumbs';
+import Breadcrumbs from './Breadcrumbs';
 import Button from './Button';
 import Loading from './Loading';
 import Page from './Page';
