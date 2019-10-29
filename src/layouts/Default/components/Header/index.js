@@ -31,6 +31,12 @@ function Header(props) {
           <Menu {...props} />
         </Navigation>
 
+        <User>
+          <Button type="button" color="primary" outline onClick={() => handleLogout()}>
+            Sair
+          </Button>
+        </User>
+
         {user.data.id && (
           <User>
             {prefix === 'https' && <img src={user.data.attributes.avatar.medium_url} />}
