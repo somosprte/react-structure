@@ -20,14 +20,15 @@ export default Page =>
     const [done, setDone] = useState(false);
 
     useEffect(() => {
-      setTimeout(() => dispatch(UsersActions.getUserLoggedRequest()), 1000);
+      // setTimeout(() => dispatch(UsersActions.getUserLoggedRequest()), 1000);
+      setTimeout(() => {}, 1000);
     }, []);
 
     useEffect(() => {
-      if (!user.loading) {
-        setLoaded(!user.loading);
-        setTimeout(() => setLoading(false), 400);
-      }
+      // if (!user.loading) {
+      setLoaded(!user.loading);
+      setTimeout(() => setLoading(false), 400);
+      // }
     }, [user.loading]);
 
     useEffect(() => {

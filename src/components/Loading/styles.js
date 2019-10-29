@@ -23,7 +23,7 @@ export const Container = styled.div`
       justify-content: center;
 
       > svg {
-        color: ${colors.darkPink};
+        color: ${colors.darkBlue};
       }
     `}
 
@@ -44,7 +44,7 @@ export const Container = styled.div`
       width: 100%;
 
       > svg {
-        color: ${colors.darkPink};
+        color: ${colors.darkBlue};
       }
     `}
 `;

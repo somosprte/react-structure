@@ -51,6 +51,12 @@ export const LinkLogo = styled(Link)`
   margin-right: 90px;
   display: flex;
   justify-content: center;
+
+  > img {
+    height: 100px;
+    margin-top: 15px;
+    width: 200px;
+  }
 `;
 
 export const Navigation = styled.div`
