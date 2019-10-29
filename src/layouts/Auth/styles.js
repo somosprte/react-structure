@@ -14,7 +14,10 @@ const fadeIn = keyframes`
 export const Container = styled.div`
   animation: ${fadeIn} 1.5s linear;
   align-items: center;
-  background: ${colors.white};
+  background-image: ${props => `url(${props.image})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
