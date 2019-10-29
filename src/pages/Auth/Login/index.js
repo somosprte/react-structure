@@ -53,7 +53,7 @@ function Login() {
           </Button>
 
           <FacebookLogin
-            appId={process.env.FACEBOOK_APP_ID}
+            appId={process.env.REACT_APP_FACEBOOK_APP_ID}
             disableMobileRedirect={true}
             fields="id,first_name,last_name,email"
             callback={profile => handleLoginFacebook(profile)}

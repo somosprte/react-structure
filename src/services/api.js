@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.API_URL,
+  baseURL: process.env.REACT_APP_API_URL,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -10,21 +10,21 @@ const api = axios.create({
 });
 
 // Interceptors: API Request
-api.interceptors.request.use(
-  async config => {
-    // TODO: Before complete request check if localStorage have the auth_token, if is on storage add headers Authorization
-    const token = await localStorage.getItem('auth_token');
+// api.interceptors.request.use(
+//   async config => {
+//     // TODO: Before complete request check if localStorage have the auth_token, if is on storage add headers Authorization
+//     const token = await localStorage.getItem('auth_token');
 
-    if (token !== null) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+//     if (token !== null) {
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
 
-    return config;
-  },
-  error => Promise.reject(error),
-);
+//     return config;
+//   },
+//   error => Promise.reject(error),
+// );
 
 // Interceptors: API Response
-api.interceptors.response.use(config => config, error => Promise.reject(error));
+// api.interceptors.response.use(config => config, error => Promise.reject(error));
 
 export default api;
