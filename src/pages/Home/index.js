@@ -4,7 +4,7 @@ import { Creators as RepositoriesActions } from '~/store/ducks/repositories';
 
 import { Page, Breadcrumbs, Panel, Loading } from '~/components';
 
-import { Container } from './styles';
+import { Container, Repository, RepositoryTitle, Avatar, Description } from './styles';
 
 const breadcrumbs = [{ name: 'inicio', to: '' }];
 
@@ -26,7 +26,6 @@ function Home(props) {
   return (
     <Page>
       <Container>
-        {console.log(repositories)}
         <Page.Header>
           <Page.Title>
             <Breadcrumbs data={breadcrumbs} />
@@ -41,7 +40,13 @@ function Home(props) {
           ) : (
             <>
               {repositories.data.map(repo => (
-                <h1>{repo.name}</h1>
+                <Repository key={repo.id}>
+                  <Avatar src={repo.owner.avatar_url} />
+                  <div>
+                    <RepositoryTitle>{repo.name}</RepositoryTitle>
+                    <Description>{repo.description}</Description>
+                  </div>
+                </Repository>
               ))}
             </>
           )}
