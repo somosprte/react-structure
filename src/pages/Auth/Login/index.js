@@ -6,7 +6,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Creators as AuthActions } from '~/store/ducks/auth';
 
 import { Loading } from '~/components';
-import { Container, Title, Button, Form } from './styles';
+import LogoImage from '~/assets/images/logo.jpg';
+
+import { Container, Title, Button, Form, Logo } from './styles';
 
 const schema = Yup.object().shape({
   username: Yup.string()
@@ -29,6 +31,8 @@ function Login() {
 
   return (
     <Container>
+      <Logo src={LogoImage} />
+
       <Title>
         Login
         <span>Insira o seu usuário do Github:</span>

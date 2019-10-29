@@ -4,7 +4,7 @@ import { Loading as Spinner } from '~/components';
 
 import { Container } from './styles';
 
-import LogoImage from '~/assets/images/logo.svg';
+import LogoImage from '~/assets/images/logo.jpg';
 
 function Loading(props) {
   return (

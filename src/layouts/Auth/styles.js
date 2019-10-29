@@ -30,9 +30,3 @@ export const Container = styled.div`
     justify-content: center;
   }
 `;
-
-export const Logo = styled.img`
-  align-self: flex-start;
-  height: 100px;
-  margin-bottom: 20px;
-`;
