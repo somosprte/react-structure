@@ -11,9 +11,9 @@ import LogoImage from '~/assets/images/logo.jpg';
 import { Container, Title, Button, Form, Logo } from './styles';
 
 const schema = Yup.object().shape({
-  username: Yup.string()
-    // .email()
-    .required(),
+  username: Yup.string(),
+  // .email()
+  // .required(),
   // password: Yup.string().required(),
 });
 
@@ -26,7 +26,7 @@ function Login() {
   }
 
   function handleLoginFacebook(profile) {
-    profile.id && dispatch(AuthActions.loginRequest({ profile }, 'facebook'));
+    // profile.id && dispatch(AuthActions.getFacebookRequest(profile));
   }
 
   return (

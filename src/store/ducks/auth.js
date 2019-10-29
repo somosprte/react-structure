@@ -60,9 +60,9 @@ export default function auth(state = initialState, action) {
 }
 
 export const Creators = {
-  loginRequest: (data, provider = 'local') => ({
+  loginRequest: data => ({
     type: Types.LOGIN_REQUEST,
-    payload: { data, provider },
+    payload: { data },
   }),
 
   loginSuccess: () => ({
