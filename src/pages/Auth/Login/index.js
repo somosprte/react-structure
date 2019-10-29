@@ -10,9 +10,9 @@ import { Container, Title, Button, Form } from './styles';
 
 const schema = Yup.object().shape({
   username: Yup.string()
-    .email()
+    // .email()
     .required(),
-  password: Yup.string().required(),
+  // password: Yup.string().required(),
 });
 
 function Login() {
@@ -31,17 +31,17 @@ function Login() {
     <Container>
       <Title>
         Login
-        <span>Insira os dados da sua conta Zôdio:</span>
+        <span>Insira o seu usuário do Github:</span>
       </Title>
 
       <Form schema={schema} onSubmit={handleLogin}>
         <Form.Field>
-          <Form.Input name="username" placeholder="Seu e-mail" autoComplete="off" />
+          <Form.Input name="username" placeholder="Usuário" autoComplete="off" />
         </Form.Field>
 
-        <Form.Field>
+        {/* <Form.Field>
           <Form.Input name="password" type="password" placeholder="Sua senha" />
-        </Form.Field>
+        </Form.Field> */}
 
         <Form.Buttons vertical>
           <Button type="submit" disabled={login.loading} large>
