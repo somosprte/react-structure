@@ -6,7 +6,7 @@ import { Container } from './styles';
 
 const breadcrumbs = [{ name: 'inicio', to: '' }];
 
-function Dashboard(props) {
+function Home(props) {
   return (
     <Page>
       <Container>
@@ -14,7 +14,7 @@ function Dashboard(props) {
           <Page.Title>
             <Breadcrumbs data={breadcrumbs} />
 
-            <h2>Dashboard</h2>
+            <h2>Home</h2>
           </Page.Title>
         </Page.Header>
 
@@ -28,4 +28,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default Home;
