@@ -14,14 +14,12 @@ function Home(props) {
           <Page.Title>
             <Breadcrumbs data={breadcrumbs} />
 
-            <h2>Home</h2>
+            <h2>Meus repositórios</h2>
           </Page.Title>
         </Page.Header>
 
         <Panel>
-          <div>
-            <h1>React-Structure</h1>
-          </div>
+          <div></div>
         </Panel>
       </Container>
     </Page>

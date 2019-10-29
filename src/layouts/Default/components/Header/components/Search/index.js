@@ -8,7 +8,7 @@ function Search(props) {
   return (
     <Container>
       <Form onSubmit={() => {}}>
-        <Form.Input name="search" placeholder="Buscar em produtos" />
+        <Form.Input name="search" placeholder="Buscar em repositórios" />
       </Form>
     </Container>
   );
