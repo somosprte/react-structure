@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${colors.darkPink};
+  color: ${colors.darkBlue};
   display: flex;
   flex-direction: column;
   font-size: 42px;

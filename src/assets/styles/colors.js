@@ -18,5 +18,4 @@ export default {
   success: '#C2D98B',
   error: '#D33F49',
   warning: '#FB8B24',
-
 };

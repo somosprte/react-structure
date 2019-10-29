@@ -8,6 +8,7 @@
     "test": "rocket-scripts test"
   },
   "dependencies": {
+    "@hot-loader/react-dom": "^16.10.2",
     "@rocketseat/rocket-scripts": "^0.0.23",
     "@rocketseat/unform": "^1.6.1",
     "axios": "^0.19.0",

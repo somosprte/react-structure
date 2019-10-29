@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 import { useField } from '@rocketseat/unform';
-import Async from 'react-select/lib/Async';
+import Async from 'react-select/async';
 
 import { Loading, Form } from '~/components';
 
