@@ -6,9 +6,6 @@ import { Creators as AuthActions } from '~/store/ducks/auth';
 import { Search, Menu } from './components';
 import { Button } from '~/components';
 
-import LogoImage from '~/assets/images/logo.svg';
-
-import { colors } from '~/assets/styles';
 import { Container, LinkLogo, Navigation, User } from './styles';
 
 function Header(props) {
