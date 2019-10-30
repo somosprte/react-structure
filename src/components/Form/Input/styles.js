@@ -82,11 +82,3 @@ export const Icon = styled.div`
       }
     `}
 `;
-
-export const Text = styled.span`
-  color: ${colors.darkGray};
-  font-size: 11px;
-  line-height: 16px;
-  position: absolute;
-  right: 19px;
-`;

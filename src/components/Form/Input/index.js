@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { Container, StyledInput, Icon, Text } from './styles';
+import { Container, StyledInput, Icon } from './styles';
 
 function Input(props) {
-  const { icon, text, responsive, cvv } = props;
+  const { icon, responsive, cvv } = props;
 
   return (
     <Container>
       <div>
         <StyledInput {...props} />
       </div>
-
-      {text && <Text>{text}</Text>}
 
       {icon && (
         <Icon cvv={cvv} responsive={responsive}>
@@ -25,7 +23,6 @@ function Input(props) {
 Input.defaultProps = {
   responsive: false,
   icon: false,
-  text: false,
 };
 
 export default Input;
