@@ -21,7 +21,7 @@ function Ratio(props) {
         pickerRef.clear();
       },
     });
-  }, [switchButton.current, fieldName, active]);
+  }, [fieldName, active, registerField, parseSelectedValue]);
 
   useEffect(() => {
     initial && setActive(initial);
@@ -41,8 +41,8 @@ function Ratio(props) {
         handleDiameter={12}
         boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
         activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-        onColor={colors.pink}
-        onHandleColor={colors.primary}
+        onColor={colors.primary}
+        onHandleColor={colors.darkBlue}
         name={fieldName}
         checked={active}
         ref={switchButton}

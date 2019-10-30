@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { Creators as UsersActions } from 'store/ducks/users';
+import { useSelector /* useDispatch */ } from 'react-redux';
+// import { Creators as UsersActions } from 'store/ducks/users';
 
 import { Header, Loading } from './components';
 
@@ -10,7 +10,7 @@ import { Container } from './styles';
 
 export default Page =>
   function Auth(props) {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const user = useSelector(state => state.users.logged);
     const logout = useSelector(state => state.auth.logout);

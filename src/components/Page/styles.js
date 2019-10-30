@@ -21,18 +21,6 @@ const slideUp = keyframes`
   }
 `;
 
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-    margin-top: 15px;
-  }
-
-  to {
-    opacity: 0;
-    margin-top: 60px;
-  }
-`;
-
 export const Container = styled.div`
   animation: ${slideUp} 0.3s ease-out, ${fadeIn} 0.4s linear;
   display: flex;

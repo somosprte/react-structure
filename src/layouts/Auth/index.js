@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { global as Global } from 'assets/styles';
-import { Container, Logo } from './styles';
+import { Container } from './styles';
 
 import BackgroundImage from 'assets/images/background.jpeg';
 
