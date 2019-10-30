@@ -1,19 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Container, Box, Title, Content } from './styles';
+import { Container, Box, Content, Overlay } from './styles';
 
 function Modal(props) {
-  const { title, children } = props;
+  const { children, setVisible, visible } = props;
 
   return (
-    <Container>
-      <Box>
-        <Title>{title}</Title>
+    <>
+      {visible && (
+        <Container>
+          <Overlay onClick={() => setVisible(false)} />
 
-        <Content>{children}</Content>
-      </Box>
-    </Container>
+          <Box>
+            <Content>{children}</Content>
+          </Box>
+        </Container>
+      )}
+    </>
   );
 }
+
+Modal.defaultProps = {
+  setVisible: () => {},
+  visible: false,
+};
+
+Modal.propTypes = {
+  setVisible: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
 
 export default Modal;

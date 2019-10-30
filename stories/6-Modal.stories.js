@@ -7,7 +7,7 @@ export default {
 };
 
 export const standard = () => (
-  <Modal visible={true}>
+  <Modal visible={true} setVisible={() => {}}>
     <div>
       <h1>some text on modal</h1>
     </div>
