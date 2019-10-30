@@ -33,12 +33,6 @@ export const icon = () => (
   </Button>
 );
 
-export const facebook = () => (
-  <Button facebook onClick={action('clicked')}>
-    Login com Facebook
-  </Button>
-);
-
 export const large = () => (
   <Button large onClick={action('clicked')}>
     Large
