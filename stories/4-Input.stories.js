@@ -17,7 +17,7 @@ export const standard = () => (
 
 export const withImage = () => (
   <Form>
-    <Form.Input cvv name="cvv" placeholder="CVV" maxLength="4" icon={<img src={CVV} />} />
+    <Form.Input cvv name="cvv" placeholder="CVV" maxLength="4" icon={<img alt="cvv" src={CVV} />} />
   </Form>
 );
 
