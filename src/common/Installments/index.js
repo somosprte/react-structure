@@ -1,4 +1,4 @@
-import { NumberFormat } from '~/common';
+import { NumberFormat } from 'common';
 
 const minInstallment = 40;
 

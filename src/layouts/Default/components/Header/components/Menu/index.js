@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { URLParser } from '~/common';
+import { URLParser } from 'common';
 
 import { Nav, Title, Item, Link } from './styles';
 

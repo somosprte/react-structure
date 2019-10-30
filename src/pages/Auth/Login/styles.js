@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 
-import { Form as ComponentForm, Button as ComponentButton } from '~/components';
+import { Form as ComponentForm, Button as ComponentButton } from 'components';
 
 export const Container = styled.div`
   background: ${colors.white};

@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { device } from '~/assets/styles';
+import { device } from 'assets/styles';
 
 const fadeIn = keyframes`
   from {

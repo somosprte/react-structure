@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 import { StyledSwitch } from './styles';
 
 import { useField } from '@rocketseat/unform';

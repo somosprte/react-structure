@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 import Async from 'react-select/async';
 
-import { Loading, Form } from '~/components';
+import { Loading, Form } from 'components';
 
 import { StyledSelect } from './styles';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 
 function Select(props) {
   const { name, label, options, multiple, async, disabled, placeholder, noIndicator, ...rest } = props;

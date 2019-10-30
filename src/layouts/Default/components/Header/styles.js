@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors, device } from '~/assets/styles';
+import { colors, device } from 'assets/styles';
 
 const animation = keyframes`
   from {

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Loading as Spinner } from '~/components';
+import { Loading as Spinner } from 'components';
 
 import { Container, Logo } from './styles';
 
-import LogoImage from '~/assets/images/logo.jpg';
+import LogoImage from 'assets/images/logo.jpg';
 
 function Loading(props) {
   return (

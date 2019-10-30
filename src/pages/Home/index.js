@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Creators as RepositoriesActions } from '~/store/ducks/repositories';
+import { Creators as RepositoriesActions } from 'store/ducks/repositories';
 
-import { Page, Breadcrumbs, Panel, Loading } from '~/components';
+import { Page, Breadcrumbs, Panel, Loading } from 'components';
 
 import { Container, Repository, RepositoryTitle, Avatar, Description } from './styles';
 

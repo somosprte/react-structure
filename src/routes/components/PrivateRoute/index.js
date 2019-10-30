@@ -1,5 +1,5 @@
 import React from 'react';
-import { withLayout } from '~/hocs';
+import { withLayout } from 'hocs';
 
 import { Container, Route } from './styles';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { global as Global } from '~/assets/styles';
+import { global as Global } from 'assets/styles';
 import { Container } from './styles';
 
 export default Page =>

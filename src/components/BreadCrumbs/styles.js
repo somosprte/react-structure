@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link as ComponentLink } from 'react-router-dom';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 
 export const Container = styled.div``;
 

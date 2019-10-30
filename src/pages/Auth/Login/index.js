@@ -3,10 +3,10 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 import * as Yup from 'yup';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { Creators as AuthActions } from '~/store/ducks/auth';
+import { Creators as AuthActions } from 'store/ducks/auth';
 
-import { Loading } from '~/components';
-import LogoImage from '~/assets/images/logo.jpg';
+import { Loading } from 'components';
+import LogoImage from 'assets/images/logo.jpg';
 
 import { Container, Title, Button, Form, Logo } from './styles';
 

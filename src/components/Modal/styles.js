@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, device } from '~/assets/styles';
+import { colors, device } from 'assets/styles';
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.6);

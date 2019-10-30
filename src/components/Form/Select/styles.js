@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import Select from 'react-select';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 
 export const StyledSelect = styled(Select)`
   background: ${colors.white};

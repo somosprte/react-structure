@@ -1,10 +1,10 @@
 import { call, put, takeLatest, delay, select } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-// import { api } from '~/services';
+// import { api } from 'services';
 import swal from 'sweetalert';
 
-import { Creators as AuthActions, Types as AuthTypes } from '~/store/ducks/auth';
-// import { getUserLoggedRequest } from '~/store/sagas/users';
+import { Creators as AuthActions, Types as AuthTypes } from 'store/ducks/auth';
+// import { getUserLoggedRequest } from 'store/sagas/users';
 
 function* loginRequest(action) {
   try {
