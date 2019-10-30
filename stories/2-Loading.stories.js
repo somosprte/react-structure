@@ -2,7 +2,7 @@ import React from 'react';
 import { Loading, Button, Panel, Table } from 'components';
 
 export default {
-  title: 'Loading',
+  title: 'Layout|Loading',
 };
 
 export const standard = () => <Loading size={40} />;

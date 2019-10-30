@@ -4,7 +4,7 @@ import { Button } from 'components';
 import { FaTrashAlt } from 'react-icons/fa';
 
 export default {
-  title: 'Button',
+  title: 'Layout|Button',
 };
 
 export const standard = () => <Button onClick={action('clicked')}>standard</Button>;

@@ -6,7 +6,7 @@ import { colors } from 'assets/styles';
 import CVV from 'assets/images/cvc.png';
 
 export default {
-  title: 'Input',
+  title: 'Form|Input',
 };
 
 export const standard = () => (
