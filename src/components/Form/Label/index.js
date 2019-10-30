@@ -6,6 +6,6 @@ export default styled.label`
   font-size: 13px;
   font-weight: 600;
   line-height: 21px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   text-transform: uppercase;
 `;

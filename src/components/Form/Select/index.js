@@ -4,12 +4,27 @@ import { useField } from '@rocketseat/unform';
 import Async from 'react-select/async';
 
 import { Loading, Form } from 'components';
-
-import { StyledSelect } from './styles';
+import { DropdownIndicator } from './components';
 import { colors } from 'assets/styles';
 
+import { Container, StyledSelect } from './styles';
+
 function Select(props) {
-  const { name, label, options, multiple, async, disabled, placeholder, noIndicator, ...rest } = props;
+  const {
+    name,
+    per,
+    label,
+    options,
+    multiple,
+    async,
+    disabled,
+    placeholder,
+    noIndicator,
+    noBorder,
+    basket,
+    sort,
+    ...rest
+  } = props;
   const ref = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
 
@@ -24,6 +39,7 @@ function Select(props) {
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isSelected || state.isFocused ? colors.primary : colors.white,
+      borderRadius: '5px',
       color: state.isSelected || state.isFocused ? colors.white : colors.darkGray,
     }),
 
@@ -51,6 +67,14 @@ function Select(props) {
       ...provided,
       display: noIndicator ? 'none' : 'flex',
     }),
+
+    singleValue: provided => ({
+      ...provided,
+      color: colors.black,
+      fontSize: sort || per ? 16 : 13,
+      fontWeight: sort || per ? 600 : 'normal',
+      lineHeight: sort || per ? 26 : 23,
+    }),
   };
 
   function parseSelectValue(selectValue) {
@@ -73,10 +97,10 @@ function Select(props) {
         },
       });
     }
-  }, [defaultValue, ref.current, fieldName]);
+  }, [defaultValue, fieldName, registerField, async, parseSelectValue]);
 
   return (
-    <>
+    <Container basket={basket} per={per}>
       {defaultValue === undefined && multiple ? (
         <Loading />
       ) : disabled ? (
@@ -84,6 +108,7 @@ function Select(props) {
       ) : (
         <StyledSelect
           name={fieldName}
+          components={{ DropdownIndicator }}
           aria-label={fieldName}
           options={options}
           isMulti={multiple}
@@ -92,13 +117,23 @@ function Select(props) {
           placeholder={placeholder}
           styles={styles}
           as={async && Async}
+          per={per}
+          noBorder={noBorder}
           {...rest}
         />
       )}
 
       {error && <span>{error}</span>}
-    </>
+    </Container>
   );
 }
+
+Select.defaultProps = {
+  basket: false,
+  noBorder: false,
+  noIndicator: false,
+  per: false,
+  sort: false,
+};
 
 export default Select;
