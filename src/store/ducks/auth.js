@@ -12,6 +12,10 @@ const initialState = {
   login: {
     loading: false,
   },
+
+  logout: {
+    loading: false,
+  },
 };
 
 export default function auth(state = initialState, action) {
@@ -33,15 +37,32 @@ export default function auth(state = initialState, action) {
           loading: false,
         },
       };
+    case Types.LOGOUT_REQUEST:
+      return {
+        ...state,
+        logout: {
+          ...state.logout,
+          loading: true,
+        },
+      };
+    case Types.LOGOUT_SUCCESS:
+    case Types.LOGOUT_FAILURE:
+      return {
+        ...state,
+        logout: {
+          ...state.logout,
+          loading: false,
+        },
+      };
     default:
       return state;
   }
 }
 
 export const Creators = {
-  loginRequest: data => ({
+  loginRequest: (data, provider = 'local') => ({
     type: Types.LOGIN_REQUEST,
-    payload: { data },
+    payload: { data, provider },
   }),
 
   loginSuccess: () => ({

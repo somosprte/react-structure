@@ -1,15 +1,22 @@
 import React from 'react';
 
 import { global as Global } from '~/assets/styles';
+import { Container, Logo } from './styles';
+
+import LogoImage from '~/assets/images/logo.svg';
 
 export default Page =>
   function Auth(props) {
     return (
-      <div>
+      <>
         <Global.Styles />
-        <h1>Tela de autenticação 4</h1>
+        <Container>
+          <div>
+            <Logo src={LogoImage} />
 
-        <Page {...props} />
-      </div>
+            <Page {...props} />
+          </div>
+        </Container>
+      </>
     );
   };
