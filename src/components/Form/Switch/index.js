@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import { colors } from 'assets/styles';
 import { StyledSwitch } from './styles';
 
 import { useField } from '@rocketseat/unform';
 
-function Ratio(props) {
+function Switch(props) {
   const { name, initial } = props;
   const switchButton = useRef(null);
   const { fieldName, registerField, error } = useField(name);
@@ -41,8 +42,8 @@ function Ratio(props) {
         handleDiameter={12}
         boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
         activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-        onColor={colors.primary}
-        onHandleColor={colors.darkBlue}
+        onColor={colors.lightBlue}
+        onHandleColor={colors.white}
         name={fieldName}
         checked={active}
         ref={switchButton}
@@ -54,4 +55,14 @@ function Ratio(props) {
   );
 }
 
-export default Ratio;
+Switch.defaultProps = {
+  name: '',
+  initial: false,
+};
+
+Switch.propTypes = {
+  name: PropTypes.string.isRequired,
+  initial: PropTypes.bool,
+};
+
+export default Switch;

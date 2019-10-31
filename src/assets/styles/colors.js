@@ -3,6 +3,7 @@ export default {
   secondary: '#C2D98B',
 
   darkBlue: '#14659b',
+  lightBlue: '#85C4ED',
 
   black: '#2D2D2D',
   white: '#FFFFFF',
