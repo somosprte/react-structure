@@ -40,6 +40,7 @@ export default Page =>
         <Global.Styles />
         {loading ? (
           <Loading loaded={loaded} />
+
         ) : (
           <Container logouting={logout.loading}>
             <div>
