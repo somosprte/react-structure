@@ -1,15 +1,16 @@
 import React, { useRef, useEffect } from 'react';
-
+import Async from 'react-select/async';
 import { useField } from '@rocketseat/unform';
-import Async from 'react-select/lib/Async';
+import PropTypes from 'prop-types';
 
-import { Loading, Form } from '~/components';
+import { Form } from 'components';
+import { DropdownIndicator } from './components';
+import { colors } from 'assets/styles';
 
-import { StyledSelect } from './styles';
-import { colors } from '~/assets/styles';
+import { Container, StyledSelect } from './styles';
 
 function Select(props) {
-  const { name, label, options, multiple, async, disabled, placeholder, noIndicator, ...rest } = props;
+  const { name, multiple, async, disabled, placeholder, noIndicator, ...rest } = props;
   const ref = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
 
@@ -24,6 +25,7 @@ function Select(props) {
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isSelected || state.isFocused ? colors.primary : colors.white,
+      borderRadius: '5px',
       color: state.isSelected || state.isFocused ? colors.white : colors.darkGray,
     }),
 
@@ -51,6 +53,14 @@ function Select(props) {
       ...provided,
       display: noIndicator ? 'none' : 'flex',
     }),
+
+    singleValue: provided => ({
+      ...provided,
+      color: colors.black,
+      fontSize: 13,
+      fontWeight: 'normal',
+      lineHeight: 23,
+    }),
   };
 
   function parseSelectValue(selectValue) {
@@ -73,32 +83,57 @@ function Select(props) {
         },
       });
     }
-  }, [defaultValue, ref.current, fieldName]);
+  }, [defaultValue, fieldName, registerField, async, parseSelectValue]);
 
   return (
-    <>
-      {defaultValue === undefined && multiple ? (
-        <Loading />
-      ) : disabled ? (
+    <Container>
+      {disabled ? (
         <Form.Input disabled name={name} placeholder={placeholder} />
       ) : (
         <StyledSelect
           name={fieldName}
+          components={{ DropdownIndicator }}
           aria-label={fieldName}
-          options={options}
           isMulti={multiple}
           defaultValue={defaultValue}
           ref={ref}
-          placeholder={placeholder}
           styles={styles}
           as={async && Async}
+          placeholder={placeholder}
           {...rest}
         />
       )}
 
       {error && <span>{error}</span>}
-    </>
+    </Container>
   );
 }
+
+Select.defaultProps = {
+  disabled: false,
+  multiple: false,
+  async: false,
+  noBorder: false,
+  noIndicator: false,
+  name: '',
+  placeholder: '',
+  options: [],
+};
+
+Select.propTypes = {
+  disabled: PropTypes.bool,
+  multiple: PropTypes.bool,
+  async: PropTypes.bool,
+  noBorder: PropTypes.bool,
+  noIndicator: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  options: PropTypes.arrayOf([
+    PropTypes.shape({
+      value: PropTypes.object,
+      label: PropTypes.string.isRequired,
+    }),
+  ]),
+};
 
 export default Select;

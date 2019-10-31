@@ -1,74 +1,30 @@
-import styled, { css } from 'styled-components';
-import { colors } from '~/assets/styles';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default styled.button.attrs({ type: 'button' })`
-  align-items: center;
-  background: ${props => (props.color ? colors[props.color] : colors.primary)};
-  border: 0;
-  border-radius: 25px;
-  box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.07);
-  color: ${colors.white};
-  cursor: pointer;
-  display: flex;
-  font-size: 13px;
-  font-weight: 600;
-  height: ${props => (props.large ? '44px' : '34px')};
-  line-height: 19px;
-  justify-content: center;
-  padding: 0 20px;
-  text-decoration: none;
-  text-transform: uppercase;
+import { StyledButton } from './styles';
 
-  @media print {
-    display: none;
-  }
+function Button(props) {
+  return <StyledButton {...props} />;
+}
 
-  &:disabled {
-    opacity: 0.6;
-  }
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  color: PropTypes.string,
+  large: PropTypes.bool,
+  text: PropTypes.bool,
+  icon: PropTypes.bool,
+  outline: PropTypes.bool,
+};
 
-  > a {
-    color: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 19px;
-    text-decoration: none;
-  }
+Button.defaultProps = {
+  onClick: () => {},
+  disabled: false,
+  color: 'primary',
+  large: false,
+  text: false,
+  icon: false,
+  outline: false,
+};
 
-  ${props =>
-    props.outline &&
-    css`
-      background: ${colors.white};
-      color: ${props => (props.color ? colors[props.color] : colors.primary)};
-      border: 1px solid ${props => (props.color ? colors[props.color] : colors.primary)};
-    `}
-
-  ${props =>
-    props.text &&
-    css`
-      background: ${colors.white};
-      border: ${colors.white};
-      box-shadow: none;
-      color: ${colors.black};
-    `}
-
-    ${props =>
-      props.icon &&
-      css`
-        background: ${colors.lightGray};
-        color: ${colors.darkGray};
-        height: 23px;
-        padding: 0;
-        width: 23px;
-      `}
-
-
-    ${props =>
-      props.facebook &&
-      css`
-        background: ${colors.white};
-        color: #3b5998;
-        border: 1px solid #3b5998;
-      `}
-
-`;
+export default Button;

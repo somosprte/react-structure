@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { withLayout } from '~/hocs';
+import { withLayout } from 'hocs';
 
 const AuthRoute = props => {
   const { component: RenderComponent } = props;

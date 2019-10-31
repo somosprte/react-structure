@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { colors } from '~/assets/styles';
 
 const fadeIn = keyframes`
   from {
@@ -14,7 +13,10 @@ const fadeIn = keyframes`
 export const Container = styled.div`
   animation: ${fadeIn} 1.5s linear;
   align-items: center;
-  background: ${colors.white};
+  background-image: ${props => `url(${props.image})`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,10 +28,4 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-`;
-
-export const Logo = styled.img`
-  align-self: flex-start;
-  height: 100px;
-  margin-bottom: 20px;
 `;

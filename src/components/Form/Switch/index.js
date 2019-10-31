@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 import { StyledSwitch } from './styles';
 
 import { useField } from '@rocketseat/unform';
 
-function Ratio(props) {
+function Switch(props) {
   const { name, initial } = props;
   const switchButton = useRef(null);
   const { fieldName, registerField, error } = useField(name);
@@ -21,7 +22,7 @@ function Ratio(props) {
         pickerRef.clear();
       },
     });
-  }, [switchButton.current, fieldName, active]);
+  }, [fieldName, active, registerField, parseSelectedValue]);
 
   useEffect(() => {
     initial && setActive(initial);
@@ -36,13 +37,13 @@ function Ratio(props) {
       <StyledSwitch
         checkedIcon={false}
         uncheckedIcon={false}
-        height={20}
-        width={48}
-        handleDiameter={25}
+        height={12}
+        width={24}
+        handleDiameter={12}
         boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
         activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-        onColor={colors.pink}
-        onHandleColor={colors.primary}
+        onColor={colors.lightBlue}
+        onHandleColor={colors.white}
         name={fieldName}
         checked={active}
         ref={switchButton}
@@ -54,4 +55,14 @@ function Ratio(props) {
   );
 }
 
-export default Ratio;
+Switch.defaultProps = {
+  name: '',
+  initial: false,
+};
+
+Switch.propTypes = {
+  name: PropTypes.string.isRequired,
+  initial: PropTypes.bool,
+};
+
+export default Switch;

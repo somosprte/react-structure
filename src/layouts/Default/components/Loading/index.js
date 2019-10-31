@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Loading as Spinner } from '~/components';
+import { Loading as Spinner } from 'components';
 
-import { Container } from './styles';
+import { Container, Logo } from './styles';
 
-import LogoImage from '~/assets/images/logo.svg';
+import LogoImage from 'assets/images/logo.jpg';
 
 function Loading(props) {
   return (
     <Container {...props}>
       <div>
-        <img src={LogoImage} />
+        <Logo src={LogoImage} />
         <Spinner size={20} />
       </div>
     </Container>

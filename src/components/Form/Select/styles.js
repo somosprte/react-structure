@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import Select from 'react-select';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
+
+export const Container = styled.div`
+  width: 100%;
+`;
 
 export const StyledSelect = styled(Select)`
   background: ${colors.white};
@@ -11,7 +15,7 @@ export const StyledSelect = styled(Select)`
 
   > div {
     height: 100%;
-    border: 1px solid ${colors.border};
+    border: ${props => (props.noBorder ? '0' : `1px solid ${colors.border}`)};
     border-radius: 10px;
   }
 

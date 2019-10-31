@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors, device } from '~/assets/styles';
+import { colors, device } from 'assets/styles';
 
 const animation = keyframes`
   from {
@@ -51,6 +51,12 @@ export const LinkLogo = styled(Link)`
   margin-right: 90px;
   display: flex;
   justify-content: center;
+
+  > img {
+    height: 100px;
+    margin-top: 15px;
+    width: 200px;
+  }
 `;
 
 export const Navigation = styled.div`

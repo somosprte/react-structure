@@ -1,5 +1,5 @@
 import * as Auth from './Auth';
 
-import Dashboard from './Dashboard';
+import Home from './Home';
 
-export { Auth, Dashboard };
+export { Auth, Home };

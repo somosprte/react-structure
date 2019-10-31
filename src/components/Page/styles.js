@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { device } from '~/assets/styles';
+import { device } from 'assets/styles';
 
 const fadeIn = keyframes`
   from {
@@ -18,18 +18,6 @@ const slideUp = keyframes`
 
   to {
     margin-top: 15px;
-  }
-`;
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-    margin-top: 15px;
-  }
-
-  to {
-    opacity: 0;
-    margin-top: 60px;
   }
 `;
 

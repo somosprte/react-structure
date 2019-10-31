@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { colors } from '~/assets/styles';
+import { colors } from 'assets/styles';
 
 const show = keyframes`
     from {
@@ -81,8 +81,13 @@ export const Container = styled.div`
         `}
 
       > svg {
-        color: ${colors.darkPink};
+        color: ${colors.darkBlue};
       }
     }
   }
+`;
+
+export const Logo = styled.img`
+  height: 100px;
+  width: 200px;
 `;

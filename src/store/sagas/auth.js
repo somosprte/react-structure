@@ -1,27 +1,28 @@
 import { call, put, takeLatest, delay, select } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { api } from '~/services';
+// import { api } from 'services';
 import swal from 'sweetalert';
 
-import { Creators as AuthActions, Types as AuthTypes } from '~/store/ducks/auth';
-import { getUserLoggedRequest } from '~/store/sagas/users';
+import { Creators as AuthActions, Types as AuthTypes } from 'store/ducks/auth';
+// import { getUserLoggedRequest } from 'store/sagas/users';
 
 function* loginRequest(action) {
   try {
-    const { data, provider } = action.payload;
-    const url = provider === 'facebook' ? 'auth/v2/users/facebook' : 'auth/v2/users/login';
-    const response = yield call(api.post, url, data);
-    const { jwt } = response.data;
+    const { data } = action.payload;
+    // const url = 'auth/v2/users/login';
+    // const response = yield call(api.post, url, data);
+    // const { jwt } = response.data;
 
-    localStorage.setItem('auth_token', jwt);
+    // localStorage.setItem('auth_token', jwt);
+    localStorage.setItem('auth_token', data.username);
 
-    const success = yield call(getUserLoggedRequest);
+    // const success = yield call(getUserLoggedRequest);
 
-    if (!success) {
-      yield put(AuthActions.loginFailure());
+    // if (!success) {
+    //   yield put(AuthActions.loginFailure());
 
-      return;
-    }
+    //   return;
+    // }
 
     yield put(push('/'));
     yield put(AuthActions.loginSuccess());
