@@ -1,10 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
+import PropTypes from 'prop-types';
 
 import { StyledMaskedInput } from './styles';
 
 function MaskedInput(props) {
-  const { name, mask, onComplete, placeholder } = props;
+  const { name, mask, placeholder } = props;
 
   const ref = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
@@ -19,11 +20,7 @@ function MaskedInput(props) {
         pickerRef.setInputValue(null);
       },
     });
-  }, [ref.current, fieldName]);
-
-  useEffect(() => {
-    onComplete && value && value.replace(/[^0-9]/g, '').length === 8 && onComplete(value.replace(/[^0-9]/g, ''));
-  }, [value]);
+  }, [fieldName, registerField]);
 
   return (
     <>
@@ -39,5 +36,17 @@ function MaskedInput(props) {
     </>
   );
 }
+
+MaskedInput.defaultProps = {
+  name: '',
+  mask: '',
+  placeholder: '',
+};
+
+MaskedInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  mask: PropTypes.string,
+  placeholder: PropTypes.string,
+};
 
 export default MaskedInput;
