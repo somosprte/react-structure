@@ -58,7 +58,7 @@ function Login() {
             fields="id,first_name,last_name,email"
             callback={profile => handleLoginFacebook(profile)}
             render={props => (
-              <Button facebook large onClick={props.onClick}>
+              <Button outline large onClick={props.onClick}>
                 Login com Facebook
               </Button>
             )}
