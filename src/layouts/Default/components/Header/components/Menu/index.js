@@ -15,7 +15,11 @@ function Menu(props) {
   return (
     <Nav>
       <Title active={active === ''}>
-        <Link to="/">Repositórios</Link>
+        <Link to="/">Dashboard</Link>
+      </Title>
+
+      <Title active={active === 'repositories'}>
+        <Link to="/repositories">Repositories</Link>
       </Title>
 
       <Title>

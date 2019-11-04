@@ -14,6 +14,7 @@ const Routes = () => {
         <AuthRoute path="/login" component={Pages.Auth.Login} exact />
 
         <PrivateRoute path="/" component={Pages.Home} exact />
+        <PrivateRoute path="/repositories" component={Pages.Repositories} exact />
       </Switch>
     </ConnectedRouter>
   );
