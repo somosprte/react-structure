@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Creators as RepositoriesActions } from 'store/ducks/repositories';
 
-import { Page, Breadcrumbs, Panel, Loading } from 'components';
+import { Page, Breadcrumbs, Panel, Loading, Button, Tooltip } from 'components';
 
 import { Container, Repository, RepositoryTitle, Avatar, Description } from './styles';
 
@@ -13,15 +13,15 @@ function Home(props) {
 
   const repositories = useSelector(state => state.repositories);
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
   async function loadData() {
     const token = await localStorage.getItem('auth_token');
 
     token !== null && dispatch(RepositoriesActions.getRepositoriesRequest(token));
   }
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   return (
     <Page>
@@ -32,6 +32,19 @@ function Home(props) {
 
             <h2>Meus repositórios</h2>
           </Page.Title>
+
+          <Page.Actions>
+            <Tooltip
+              id="teste"
+              tip={
+                <div>
+                  <span>Alguma dica sobre o botão</span>
+                </div>
+              }
+            >
+              <Button onClick={() => {}}>Teste de tooltip</Button>
+            </Tooltip>
+          </Page.Actions>
         </Page.Header>
 
         <Panel>
