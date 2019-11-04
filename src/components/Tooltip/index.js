@@ -21,7 +21,7 @@ function Tooltip(props) {
 Tooltip.defaultProps = {
   multiline: false,
   border: false,
-  disabled: false,
+  disable: false,
   clickable: false,
   place: 'top',
   type: 'dark',
@@ -31,7 +31,7 @@ Tooltip.defaultProps = {
 Tooltip.propTypes = {
   multiline: PropTypes.bool,
   border: PropTypes.bool,
-  disabled: PropTypes.bool,
+  disable: PropTypes.bool,
   clickable: PropTypes.bool,
   id: PropTypes.string.isRequired,
   tip: PropTypes.element.isRequired,
