@@ -1,56 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Creators as RepositoriesActions } from 'store/ducks/repositories';
+import React from 'react';
 
-import { Page, Breadcrumbs, Panel, Loading } from 'components';
+import { Page, Charts } from 'components';
 
-import { Container, Repository, RepositoryTitle, Avatar, Description } from './styles';
-
-const breadcrumbs = [{ name: 'inicio', to: '' }];
+import { Container } from './styles';
 
 function Home(props) {
-  const dispatch = useDispatch();
-
-  const repositories = useSelector(state => state.repositories);
-
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  async function loadData() {
-    const token = await localStorage.getItem('auth_token');
-
-    token !== null && dispatch(RepositoriesActions.getRepositoriesRequest(token));
-  }
-
   return (
     <Page>
       <Container>
-        <Page.Header>
-          <Page.Title>
-            <Breadcrumbs data={breadcrumbs} />
-
-            <h2>Meus repositórios</h2>
-          </Page.Title>
-        </Page.Header>
-
-        <Panel>
-          {repositories.loading ? (
-            <Loading container size={40} />
-          ) : (
-            <>
-              {repositories.data.map(repo => (
-                <Repository key={repo.id}>
-                  <Avatar src={repo.owner.avatar_url} />
-                  <div>
-                    <RepositoryTitle>{repo.name}</RepositoryTitle>
-                    <Description>{repo.description}</Description>
-                  </div>
-                </Repository>
-              ))}
-            </>
-          )}
-        </Panel>
+        <Charts data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]} title="teste" yTitle="Vendas por mês" />
+        <Charts data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]} type="line" title="teste" yTitle="Vendas por mês" />
       </Container>
     </Page>
   );
