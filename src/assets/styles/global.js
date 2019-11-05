@@ -33,4 +33,5 @@ export const Styles = createGlobalStyle`
   a {
     color: ${colors.primary};
   }
+
 `;
