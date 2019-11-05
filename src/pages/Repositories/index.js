@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { api } from 'services';
 
-import { Page, Breadcrumbs, Panel, Loading, Button, Tooltip } from 'components';
+import { Page, Breadcrumbs, Panel, Button, Tooltip, Placeholder } from 'components';
 
 import { Container, Repository, RepositoryTitle, Avatar, Description } from './styles';
 
@@ -9,7 +9,7 @@ const breadcrumbs = [{ name: 'inicio', to: '' }];
 
 function Home(props) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -58,11 +58,9 @@ function Home(props) {
         </Page.Header>
 
         <Panel>
-          {loading ? (
-            <Loading container size={40} />
-          ) : (
-            <>
-              {data.map(repo => (
+          {data.map(repo => (
+            <Placeholder ready={!loading} component={Placeholder.Repository}>
+              {!loading && (
                 <Repository key={repo.id}>
                   <Avatar src={repo.owner.avatar_url} />
                   <div>
@@ -70,9 +68,9 @@ function Home(props) {
                     <Description>{repo.description}</Description>
                   </div>
                 </Repository>
-              ))}
-            </>
-          )}
+              )}
+            </Placeholder>
+          ))}
         </Panel>
       </Container>
     </Page>
