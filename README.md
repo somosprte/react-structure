@@ -46,26 +46,16 @@ If you want to see the components's behavior, **properties** and effects. You ju
 
 Take a look at this dependencies
 
-### momentJS
-
 [moment](https://github.com/moment/moment/)
 
-### react-scripts
+[react-hooks](https://reactjs.org/docs/hooks-intro.html)
 
 [react-scripts](https://github.com/facebook/create-react-app)
 
-### redux
-
 [redux](https://github.com/reduxjs/redux)
-
-### styled-components
 
 [styled-components](https://github.com/styled-components/styled-components)
 
-### unform
-
 [unform](https://github.com/Rocketseat/unform)
-
-### yup
 
 [yup](https://github.com/jquense/yup)
