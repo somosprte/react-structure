@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Creators as RepositoriesActions } from 'store/ducks/repositories';
+import React, { useEffect, useState } from 'react';
+import { api } from 'services';
 
 import { Page, Breadcrumbs, Panel, Loading, Button, Tooltip } from 'components';
 
@@ -9,19 +8,30 @@ import { Container, Repository, RepositoryTitle, Avatar, Description } from './s
 const breadcrumbs = [{ name: 'inicio', to: '' }];
 
 function Home(props) {
-  const dispatch = useDispatch();
-
-  const repositories = useSelector(state => state.repositories);
-
-  async function loadData() {
-    const token = await localStorage.getItem('auth_token');
-
-    token !== null && dispatch(RepositoriesActions.getRepositoriesRequest(token));
-  }
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadData();
   }, []);
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      const token = await localStorage.getItem('auth_token');
+
+      if (token !== null) {
+        const response = await api.get(`users/${token}/repos`);
+
+        const { data } = response;
+
+        setData(data);
+      }
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  }
 
   return (
     <Page>
@@ -48,11 +58,11 @@ function Home(props) {
         </Page.Header>
 
         <Panel>
-          {repositories.loading ? (
+          {loading ? (
             <Loading container size={40} />
           ) : (
             <>
-              {repositories.data.map(repo => (
+              {data.map(repo => (
                 <Repository key={repo.id}>
                   <Avatar src={repo.owner.avatar_url} />
                   <div>
