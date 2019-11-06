@@ -9,7 +9,7 @@ import { Container, Repository, RepositoryTitle, Avatar, Description } from './s
 const breadcrumbs = [{ name: 'inicio', to: '/' }, { name: 'meus repositórios', to: '' }];
 
 function Home(props) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{}, {}, {}, {}, {}]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ function Home(props) {
               }
             >
               <Link to="/repositories/create">
-                <Button onClick={() => {}}>Teste de tooltip</Button>
+                <Button onClick={() => {}}>Novo repositório</Button>
               </Link>
             </Tooltip>
           </Page.Actions>
