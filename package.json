@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@rocketseat/unform": "^1.6.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.5.2",
     "debounce-promise": "^3.1.2",
     "gerador-validador-cpf": "^3.1.3",
